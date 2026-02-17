@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العلوم المتكاملة - الصف الأول الثانوي | أ/ إبراهيم شكري</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #6c5ce7;
+            --accent-blue: #0984e3;
+            --accent-green: #00b894;
+            --accent-orange: #fd79a8;
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --gradient-1: linear-gradient(135deg, #6c5ce7, #0984e3);
+            --gradient-2: linear-gradient(135deg, #00b894, #00cec9);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background: #0f0f1a; color: var(--white); overflow-x: hidden; min-height: 100vh; }
+        .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: linear-gradient(45deg, #0f0f1a, #1a1a2e, #16213e); overflow: hidden; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.5; animation: orbFloat 20s infinite ease-in-out; }
+        .orb-1 { width: 600px; height: 600px; background: var(--primary-purple); top: -200px; left: -200px; }
+        .orb-2 { width: 500px; height: 500px; background: var(--accent-blue); bottom: -150px; right: -150px; animation-delay: -7s; }
+        .orb-3 { width: 400px; height: 400px; background: var(--accent-green); top: 50%; left: 50%; animation-delay: -14s; }
+        @keyframes orbFloat { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(50px, 50px) scale(1.1); } }
+        .glass { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 24px; }
+        .glass-card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px; transition: all 0.4s; }
+        .glass-card:hover { transform: translateY(-5px); box-shadow: 0 20px 60px rgba(108, 92, 231, 0.3); }
+header { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 95%; max-width: 1400px; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 900; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 12px; }
+        nav ul { display: flex; list-style: none; gap: 10px; }
+        nav a { text-decoration: none; color: var(--white); font-weight: 600; padding: 12px 24px; border-radius: 50px; transition: 0.3s; }
+        nav a:hover { background: var(--gradient-1); transform: translateY(-2px); }
+        .btn-primary { padding: 14px 35px; background: var(--gradient-1); color: var(--white); border: none; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4); }
+        .btn-primary:hover { transform: translateY(-5px); }
+        .btn-secondary { padding: 14px 35px; background: transparent; color: var(--white); border: 2px solid var(--primary-purple); border-radius: 50px; font-weight: 700; text-decoration: none; transition: 0.3s; }
+        .btn-secondary:hover { background: var(--primary-purple); transform: translateY(-5px); }
+        .course-header { padding: 180px 5% 80px; max-width: 1400px; margin: 0 auto; }
+        .course-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 25px; background: rgba(9, 132, 227, 0.2); border: 1px solid rgba(9, 132, 227, 0.4); border-radius: 50px; font-size: 0.9rem; font-weight: 600; color: var(--accent-blue); margin-bottom: 25px; }
+        .course-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
+        .course-title span { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .course-meta { display: flex; gap: 30px; flex-wrap: wrap; margin-bottom: 40px; }
+        .meta-item { display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.7); }
+        .meta-item i { color: var(--accent-green); font-size: 1.2rem; }
+        .course-description { font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); line-height: 1.8; max-width: 800px; margin-bottom: 40px; }
+        .course-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+        .stat-box { text-align: center; padding: 20px 30px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .stat-number { font-size: 2rem; font-weight: 900; background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+        .stat-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin-top: 5px; }
+        .course-content { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 50px; text-align: center; }
+        .content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+        .video-section { margin-bottom: 60px; }
+        .video-player { width: 100%; aspect-ratio: 16/9; background: rgba(0, 0, 0, 0.5); border-radius: 20px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
+        .video-player img { width: 100%; height: 100%; object-fit: cover; }
+        .play-button { position: absolute; width: 80px; height: 80px; background: var(--gradient-1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--white); cursor: pointer; transition: 0.3s; box-shadow: 0 10px 30px rgba(108, 92, 231, 0.5); }
+        .play-button:hover { transform: scale(1.1); }
+        .video-info { padding: 25px; }
+        .video-info h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .video-info p { color: rgba(255, 255, 255, 0.7); line-height: 1.7; }
+.lessons-section { margin-bottom: 60px; }
+        .lessons-list { display: flex; flex-direction: column; gap: 15px; }
+        .lesson-item { display: flex; align-items: center; gap: 20px; padding: 25px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; cursor: pointer; }
+        .lesson-item:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--accent-blue); transform: translateX(-10px); }
+        .lesson-item.active { background: rgba(9, 132, 227, 0.2); border-color: var(--accent-blue); }
+        .lesson-number { width: 50px; height: 50px; background: var(--gradient-1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; flex-shrink: 0; }
+        .lesson-item.completed .lesson-number { background: var(--gradient-2); }
+        .lesson-info { flex: 1; }
+        .lesson-info h4 { font-size: 1.1rem; margin-bottom: 5px; }
+        .lesson-info p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+        .lesson-duration { display: flex; align-items: center; gap: 10px; color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+        .lesson-status { width: 30px; height: 30px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; }
+        .lesson-item.completed .lesson-status { background: var(--accent-green); border-color: var(--accent-green); }
+        .lesson-item.completed .lesson-status i { color: var(--white); font-size: 0.8rem; }
+        .sidebar { display: flex; flex-direction: column; gap: 30px; }
+        .sidebar-card { padding: 30px; }
+        .sidebar-card h3 { font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .sidebar-card h3 i { color: var(--accent-green); }
+        .progress-bar { width: 100%; height: 10px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; overflow: hidden; margin-bottom: 15px; }
+        .progress-fill { height: 100%; background: var(--gradient-2); border-radius: 10px; transition: width 0.5s; }
+        .progress-text { display: flex; justify-content: space-between; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 25px; }
+        .materials-list { display: flex; flex-direction: column; gap: 15px; }
+        .material-item { display: flex; align-items: center; gap: 15px; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; transition: 0.3s; text-decoration: none; color: var(--white); }
+        .material-item:hover { background: rgba(255, 255, 255, 0.1); transform: translateX(-5px); }
+        .material-item i { font-size: 1.5rem; color: var(--accent-blue); }
+        .material-info { flex: 1; }
+        .material-info h4 { font-size: 0.95rem; margin-bottom: 3px; }
+        .material-info p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); }
+        .material-item .download-icon { color: var(--accent-green); }
+        .instructor-card { text-align: center; }
+        .instructor-img { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden; border: 3px solid var(--accent-blue); }
+        .instructor-img img { width: 100%; height: 100%; object-fit: cover; }
+        .instructor-card h4 { font-size: 1.2rem; margin-bottom: 5px; }
+        .instructor-card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 20px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: 0.3s; }
+        .social-links a:hover { background: var(--gradient-1); transform: translateY(-3px); }
+        .tabs { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        .tab-btn { padding: 12px 30px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; color: var(--white); cursor: pointer; transition: 0.3s; font-family: 'Cairo', sans-serif; font-weight: 600; }
+        .tab-btn.active { background: var(--gradient-1); border-color: transparent; }
+        .tab-btn:hover { background: rgba(255, 255, 255, 0.1); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .info-box { padding: 30px; background: rgba(255, 255, 255, 0.05); border-radius: 15px; margin-bottom: 20px; }
+        .info-box h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--accent-blue); }
+        .info-box p { color: rgba(255, 255, 255, 0.7); line-height: 1.8; margin-bottom: 15px; }
+        .info-box ul { list-style: none; }
+        .info-box ul li { padding: 10px 0; display: flex; align-items: center; gap: 12px; color: rgba(255, 255, 255, 0.7); }
+        .info-box ul li i { color: var(--accent-green); }
+        footer { padding: 60px 5% 30px; background: rgba(0, 0, 0, 0.3); border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 80px; }
+        .footer-content { max-width: 1400px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-size: 1.5rem; font-weight: 900; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 10px; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 30px; flex-wrap: wrap; }
+        .footer-links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--accent-blue); }
+        .footer-bottom { padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        @media (max-width: 1024px) { .content-grid { grid-template-columns: 1fr; } .sidebar { order: -1; } }
+        @media (max-width: 768px) { header { padding: 15px 20px; } nav ul { display: none; } .course-title { font-size: 2.5rem; } .course-meta { flex-direction: column; gap: 15px; } .course-stats { justify-content: center; } .hero-buttons { justify-content: center; } }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0f0f1a; }
+        ::-webkit-scrollbar-thumb { background: var(--gradient-1); border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="animated-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <header class="glass">
+        <div class="logo"><i class="fas fa-atom"></i> أ/ إبراهيم شكري</div>
+        <nav><ul><li><a href="index.html">الرئيسية</a></li><li><a href="#lessons">الدروس</a></li><li><a href="#materials">المواد</a></li><li><a href="#contact">تواصل معنا</a></li></ul></nav>
+        <a href="index.html" class="btn-secondary">العودة للرئيسية</a>
+    </header>
+<section class="course-header">
+        <div class="course-badge"><i class="fas fa-flask"></i> الصف الأول الثانوي</div>
+        <h1 class="course-title">كورس <span>العلوم المتكاملة</span></h1>
+        <div class="course-meta">
+            <div class="meta-item"><i class="fas fa-video"></i><span>24 درس فيديو</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i><span>36 ساعة تعليمية</span></div>
+            <div class="meta-item"><i class="fas fa-file-alt"></i><span>ملخصات PDF</span></div>
+            <div class="meta-item"><i class="fas fa-certificate"></i><span>شهادة إتمام</span></div>
+        </div>
+        <p class="course-description">كورس شامل لتأسيس الطلاب في مادة العلوم المتكاملة بنظام الثانوية الجديد. يشمل الفيزياء والكيمياء والأحياء مع تطبيقات عملية وتمارين تفاعلية لضمان الفهم العميق.</p>
+        <div class="course-stats">
+            <div class="stat-box"><span class="stat-number">+1500</span><span class="stat-label">طالب مسجل</span></div>
+            <div class="stat-box"><span class="stat-number">4.9</span><span class="stat-label">تقييم الكورس</span></div>
+            <div class="stat-box"><span class="stat-number">24</span><span class="stat-label">درس شامل</span></div>
+            <div class="stat-box"><span class="stat-number">100%</span><span class="stat-label">ضمان الجودة</span></div>
+        </div>
+    </section>
+
+    <section class="course-content" id="lessons">
+        <h2 class="section-title reveal">محتوى الكورس</h2>
+        
+        <div class="tabs reveal">
+            <button class="tab-btn active" onclick="openTab('curriculum')">المنهج الدراسي</button>
+            <button class="tab-btn" onclick="openTab('about')">عن الكورس</button>
+            <button class="tab-btn" onclick="openTab('instructor')">عن المدرس</button>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div id="curriculum" class="tab-content active">
+                    <div class="video-section reveal">
+                        <div class="video-player glass">
+                            <img src="https://via.placeholder.com/1280x720.png?text=Video+Thumbnail" alt="الدرس الأول">
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="video-info glass-card">
+                            <h3>الدرس الأول: مقدمة في العلوم المتكاملة</h3>
+                            <p>شرح مفصل لمفهوم العلوم المتكاملة وأهميتها في النظام التعليمي الجديد، مع نظرة عامة على فروع العلوم الثلاثة.</p>
+                        </div>
+                    </div>
+
+                    <div class="lessons-section reveal">
+                        <h3 style="margin-bottom: 25px; font-size: 1.5rem;">قائمة الدروس</h3>
+                        <div class="lessons-list">
+                            <div class="lesson-item active">
+                                <div class="lesson-number">1</div>
+                                <div class="lesson-info"><h4>مقدمة في العلوم المتكاملة</h4><p>نظرة عامة على الكورس وأهدافه</p></div>
+                                <div class="lesson-duration"><i class="fas fa-clock"></i><span>45 دقيقة</span></div>
+                                <div class="lesson-status"><i class="fas fa-play"></i></div>
+                            </div>                            <div class="lesson-item completed">
+                                <div class="lesson-number"><i class="fas fa-check"></i></div>
+                                <div class="lesson-info"><h4>الوحدة الأولى: المادة وطاقتها</h4><p>خواص المادة وتحولات الطاقة</p></div>
+                                <div class="lesson-duration"><i class="fas fa-clock"></i><span>60 دقيقة</span></div>
+                                <div class="lesson-status"><i class="fas fa-check"></i></div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-number">3</div>
+                                <div class="lesson-info"><h4>الوحدة الثانية: الكون والأرض</h4><p>دراسة الكون والنظام الشمسي</p></div>
+                                <div class="lesson-duration"><i class="fas fa-clock"></i><span>55 دقيقة</span></div>
+                                <div class="lesson-status"></div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-number">4</div>
+                                <div class="lesson-info"><h4>الوحدة الثالثة: التنوع الحيوي</h4><p>تصنيف الكائنات الحية</p></div>
+                                <div class="lesson-duration"><i class="fas fa-clock"></i><span>50 دقيقة</span></div>
+                                <div class="lesson-status"></div>
+                            </div>
+                            <div class="lesson-item">
+                                <div class="lesson-number">5</div>
+                                <div class="lesson-info"><h4>مراجعة شاملة واختبار</h4><p>اختبار تقييمي للوحدة الأولى</p></div>
+                                <div class="lesson-duration"><i class="fas fa-clock"></i><span>30 دقيقة</span></div>
+                                <div class="lesson-status"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="about" class="tab-content">
+                    <div class="info-box reveal">
+                        <h4><i class="fas fa-info-circle"></i> وصف الكورس</h4>
+                        <p>هذا الكورس مصمم خصيصاً لطلاب الصف الأول الثانوي وفق نظام التعليم الجديد. يهدف إلى بناء أساس قوي في العلوم من خلال دمج الفيزياء والكيمياء والأحياء في سياق متكامل.</p>
+                    </div>
+                    <div class="info-box reveal">
+                        <h4><i class="fas fa-target"></i> أهداف الكورس</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> فهم العلاقة بين فروع العلوم المختلفة</li>
+                            <li><i class="fas fa-check-circle"></i> تطوير مهارات التفكير العلمي</li>
+                            <li><i class="fas fa-check-circle"></i> تطبيق المفاهيم العلمية في الحياة اليومية</li>
+                            <li><i class="fas fa-check-circle"></i> الاستعداد للامتحانات بنظام الثانوية الجديد</li>
+                        </ul>
+                    </div>
+                    <div class="info-box reveal">
+                        <h4><i class="fas fa-book"></i> متطلبات الكورس</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> جهاز كمبيوتر أو تابلت</li>
+                            <li><i class="fas fa-check-circle"></i> اتصال إنترنت مستقر</li>
+                            <li><i class="fas fa-check-circle"></i> دفتر ملاحظات للتمارين</li>
+                        </ul>
+                    </div>                </div>
+
+                <div id="instructor" class="tab-content">
+                    <div class="info-box reveal" style="text-align: center;">
+                        <div class="instructor-img" style="width: 150px; height: 150px; margin: 0 auto 20px;">
+                            <img src="https://via.placeholder.com/150x150.png?text=Teacher" alt="الأستاذ إبراهيم شكري">
+                        </div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 10px;">الأستاذ إبراهيم شكري</h3>
+                        <p style="color: var(--accent-blue); margin-bottom: 20px;">مدرس العلوم والأحياء</p>
+                        <p style="line-height: 1.8; margin-bottom: 20px;">خبرة أكثر من 10 سنوات في تدريس العلوم للأ مراحل الثانوية. حاصل على ماجستير في التربية العلمية. ساهم في تفوق آلاف الطلاب في امتحانات الثانوية العامة.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card glass-card reveal">
+                    <h3><i class="fas fa-chart-line"></i> تقدمك في الكورس</h3>
+                    <div class="progress-bar"><div class="progress-fill" style="width: 15%;"></div></div>
+                    <div class="progress-text"><span>مكتمل</span><span>15%</span></div>
+                    <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 20px;">3 من 24 درس مكتمل</p>
+                    <button class="btn-primary" style="width: 100%; justify-content: center;">تابع التعلم</button>
+                </div>
+
+                <div class="sidebar-card glass-card reveal" id="materials">
+                    <h3><i class="fas fa-download"></i> المواد التعليمية</h3>
+                    <div class="materials-list">
+                        <a href="#" class="material-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="material-info"><h4>ملخص الوحدة الأولى</h4><p>PDF - 2.5 MB</p></div>
+                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                        <a href="#" class="material-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="material-info"><h4>بنك الأسئلة</h4><p>PDF - 5.0 MB</p></div>
+                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                        <a href="#" class="material-item">
+                            <i class="fas fa-file-word"></i>
+                            <div class="material-info"><h4>واجبات الدروس</h4><p>DOCX - 1.2 MB</p></div>
+                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                        <a href="#" class="material-item">
+                            <i class="fas fa-file-image"></i>
+                            <div class="material-info"><h4>الخرائط الذهنية</h4><p>PNG - 3.0 MB</p></div>                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidebar-card glass-card instructor-card reveal">
+                    <div class="instructor-img">
+                        <img src="teacher.jpg" alt="الأستاذ إبراهيم شكري">
+                    </div>
+                    <h4>الأستاذ إبراهيم شكري</h4>
+                    <p>مدرس العلوم والأحياء</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo"><i class="fas fa-atom"></i> أ/ إبراهيم شكري</div>
+            <div class="footer-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="#lessons">الدروس</a>
+                <a href="#materials">المواد التعليمية</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+            <div class="footer-bottom"><p>© 2026 جميع الحقوق محفوظة للأستاذ إبراهيم شكري</p></div>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        const lessonItems = document.querySelectorAll('.lesson-item');
+        lessonItems.forEach(item => {
+            item.addEventListener('click', function() {
+                lessonItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });        });
+
+        window.addEventListener('scroll', reveal);
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 150) { element.classList.add('active'); }
+            });
+        }
+
+        const playButton = document.querySelector('.play-button');
+        if (playButton) {
+            playButton.addEventListener('click', function() {
+                alert('سيتم تشغيل الفيديو قريباً!');
+            });
+        }
+
+        window.addEventListener('load', reveal);
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأحياء - الصف الثالث الثانوي | أ/ إبراهيم شكري</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root{--purple:#6c5ce7;--blue:#0984e3;--green:#00b894;--dark:#0f0f1a;--glass:rgba(255,255,255,0.1);--border:rgba(255,255,255,0.2);--grad:linear-gradient(135deg,#00b894,#00cec9);}
+        *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+        body{font-family:'Cairo',sans-serif;background:var(--dark);color:#fff;overflow-x:hidden;}
+        .bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:linear-gradient(45deg,#0f0f1a,#1a1a2e);}
+        .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.4;animation:float 15s infinite;}
+        .orb1{width:500px;height:500px;background:var(--green);top:-100px;left:-100px;}
+        .orb2{width:400px;height:400px;background:var(--purple);bottom:-100px;right:-100px;animation-delay:-5s;}
+        .orb3{width:300px;height:300px;background:var(--blue);top:40%;left:40%;animation-delay:-10s;}
+        @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,30px)}}
+        .glass{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:20px;}
+        header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:95%;max-width:1200px;padding:15px 30px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+        .logo{font-size:1.4rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;gap:10px;}
+        nav ul{display:flex;list-style:none;gap:15px;}
+        nav a{text-decoration:none;color:#fff;font-weight:600;padding:10px 20px;border-radius:50px;transition:0.3s;}
+        nav a:hover{background:var(--grad);}
+        .btn{padding:12px 30px;background:var(--grad);color:#fff;border:none;border-radius:50px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:0.3s;}
+        .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,184,148,0.4);}
+        .btn2{padding:12px 30px;background:transparent;color:#fff;border:2px solid var(--green);border-radius:50px;font-weight:700;text-decoration:none;transition:0.3s;}
+        .btn2:hover{background:var(--green);transform:translateY(-3px);}
+        .course-head{padding:160px 5% 60px;max-width:1200px;margin:0 auto;}
+        .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(0,184,148,0.2);border:1px solid rgba(0,184,148,0.4);border-radius:50px;font-size:0.85rem;font-weight:600;color:var(--green);margin-bottom:20px;}
+        .course-head h1{font-size:3rem;font-weight:900;margin-bottom:15px;line-height:1.2;}
+        .course-head h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .meta{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:30px;}
+        .meta-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);}
+        .meta-item i{color:var(--green);}
+        .desc{font-size:1.1rem;color:rgba(255,255,255,0.8);line-height:1.7;max-width:700px;margin-bottom:30px;}
+        .stats{display:flex;gap:30px;flex-wrap:wrap;}
+        .stat-box{text-align:center;padding:15px 25px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.1);}
+        .stat-num{font-size:1.8rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;}
+        .stat-label{font-size:0.85rem;color:rgba(255,255,255,0.6);}
+        .content{padding:60px 5%;max-width:1200px;margin:0 auto;}
+        .section-title{font-size:2rem;font-weight:900;margin-bottom:40px;text-align:center;}
+        .grid{display:grid;grid-template-columns:2fr 1fr;gap:30px;}
+        .video-box{width:100%;aspect-ratio:16/9;background:rgba(0,0,0,0.5);border-radius:16px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:25px;}
+        .video-box img{width:100%;height:100%;object-fit:cover;}
+        .play-btn{position:absolute;width:70px;height:70px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;cursor:pointer;transition:0.3s;}
+        .play-btn:hover{transform:scale(1.1);}
+        .video-info{padding:20px;}
+        .video-info h3{font-size:1.3rem;margin-bottom:10px;}
+        .video-info p{color:rgba(255,255,255,0.7);line-height:1.6;}        .lessons{display:flex;flex-direction:column;gap:12px;}
+        .lesson{display:flex;align-items:center;gap:15px;padding:20px;background:rgba(255,255,255,0.05);border-radius:12px;border:1px solid rgba(255,255,255,0.1);transition:0.3s;cursor:pointer;}
+        .lesson:hover{background:rgba(255,255,255,0.1);border-color:var(--green);transform:translateX(-8px);}
+        .lesson.active{background:rgba(0,184,148,0.2);border-color:var(--green);}
+        .lesson-num{width:45px;height:45px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0;}
+        .lesson.done .lesson-num{background:linear-gradient(135deg,#6c5ce7,#0984e3);}
+        .lesson-info{flex:1;}
+        .lesson-info h4{font-size:1rem;margin-bottom:3px;}
+        .lesson-info p{font-size:0.85rem;color:rgba(255,255,255,0.6);}
+        .lesson-time{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);font-size:0.85rem;}
+        .sidebar{display:flex;flex-direction:column;gap:25px;}
+        .side-card{padding:25px;}
+        .side-card h3{font-size:1.2rem;margin-bottom:15px;display:flex;align-items:center;gap:10px;}
+        .side-card h3 i{color:var(--green);}
+        .progress{width:100%;height:8px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;margin-bottom:12px;}
+        .progress-fill{height:100%;background:var(--grad);border-radius:10px;}
+        .progress-text{display:flex;justify-content:space-between;font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:20px;}
+        .materials{display:flex;flex-direction:column;gap:12px;}
+        .material{display:flex;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,0.05);border-radius:10px;transition:0.3s;text-decoration:none;color:#fff;}
+        .material:hover{background:rgba(255,255,255,0.1);transform:translateX(-5px);}
+        .material i{font-size:1.3rem;color:var(--green);}
+        .material-info{flex:1;}
+        .material-info h4{font-size:0.9rem;margin-bottom:2px;}
+        .material-info p{font-size:0.75rem;color:rgba(255,255,255,0.6);}
+        .instructor{text-align:center;}
+        .inst-img{width:90px;height:90px;border-radius:50%;margin:0 auto 15px;overflow:hidden;border:3px solid var(--green);}
+        .inst-img img{width:100%;height:100%;object-fit:cover;}
+        .instructor h4{font-size:1.1rem;margin-bottom:5px;}
+        .instructor p{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:15px;}
+        .social{display:flex;justify-content:center;gap:12px;}
+        .social a{width:38px;height:38px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transition:0.3s;}
+        .social a:hover{background:var(--grad);transform:translateY(-3px);}
+        footer{padding:50px 5% 25px;background:rgba(0,0,0,0.3);border-top:1px solid rgba(255,255,255,0.1);margin-top:60px;}
+        .footer-content{max-width:1200px;margin:0 auto;text-align:center;}
+        .footer-logo{font-size:1.3rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:15px;display:inline-flex;align-items:center;gap:8px;}
+        .footer-links{display:flex;justify-content:center;gap:25px;margin-bottom:25px;flex-wrap:wrap;}
+        .footer-links a{color:rgba(255,255,255,0.7);text-decoration:none;transition:0.3s;}
+        .footer-links a:hover{color:var(--green);}
+        .footer-bottom{padding-top:25px;border-top:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);font-size:0.85rem;}
+        .reveal{opacity:0;transform:translateY(40px);transition:all 0.6s;}
+        .reveal.active{opacity:1;transform:translateY(0);}
+        @media(max-width:900px){.grid{grid-template-columns:1fr;}.sidebar{order:-1;}}
+        @media(max-width:768px){header{padding:12px 15px;}nav ul{display:none;}.course-head h1{font-size:2rem;}.stats{justify-content:center;}}
+        ::-webkit-scrollbar{width:8px;}
+        ::-webkit-scrollbar-track{background:#0f0f1a;}
+        ::-webkit-scrollbar-thumb{background:var(--grad);border-radius:4px;}
+    </style>
+</head>
+<body>
+    <div class="bg">        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+    <header class="glass">
+        <div class="logo"><i class="fas fa-dna"></i> أ/ إبراهيم شكري</div>
+        <nav><ul><li><a href="index.html">الرئيسية</a></li><li><a href="#lessons">الدروس</a></li><li><a href="#materials">المواد</a></li></ul></nav>
+        <a href="index.html" class="btn2">عودة</a>
+    </header>
+<section class="course-head">
+        <div class="badge"><i class="fas fa-graduation-cap"></i> الصف الثالث الثانوي</div>
+        <h1>كورس <span>الأحياء Biology</span></h1>
+        <div class="meta">
+            <div class="meta-item"><i class="fas fa-video"></i><span>36 درس</span></div>
+            <div class="meta-item"><i class="fas fa-clock"></i><span>48 ساعة</span></div>
+            <div class="meta-item"><i class="fas fa-file-alt"></i><span>ملخصات PDF</span></div>
+            <div class="meta-item"><i class="fas fa-certificate"></i><span>شهادة</span></div>
+        </div>
+        <p class="desc">كورس شامل لمنهج الأحياء للثانوية العامة. شرح تفصيلي لكل درس مع حل أسئلة امتحانات سابقة ومراجعات نهائية لضمان التفوق.</p>
+        <div class="stats">
+            <div class="stat-box"><span class="stat-num">+2500</span><span class="stat-label">طالب</span></div>
+            <div class="stat-box"><span class="stat-num">4.95</span><span class="stat-label">تقييم</span></div>
+            <div class="stat-box"><span class="stat-num">36</span><span class="stat-label">درس</span></div>
+            <div class="stat-box"><span class="stat-num">98%</span><span class="stat-label">نسبة نجاح</span></div>
+        </div>
+    </section>
+
+    <section class="content" id="lessons">
+        <h2 class="section-title reveal">محتوى الكورس</h2>
+        <div class="grid">
+            <div class="main">
+                <div class="video-box glass reveal">
+                    <img src="https://via.placeholder.com/1280x720.png?text=Biology+Video" alt="الدرس">
+                    <div class="play-btn"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="video-info glass reveal" style="margin-bottom:30px;">
+                    <h3>الدرس الأول: تركيب الخلية ووظائفها</h3>
+                    <p>شرح شامل لتركيب الخلية الحية وعضياتها المختلفة ووظائف كل منها في الكائنات الحية.</p>
+                </div>
+                <div class="lessons reveal">
+                    <div class="lesson active">
+                        <div class="lesson-num">1</div>
+                        <div class="lesson-info"><h4>تركيب الخلية ووظائفها</h4><p>الوحدة الأولى: الخلية</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>50 دقيقة</span></div>
+                    </div>
+                    <div class="lesson done">
+                        <div class="lesson-num"><i class="fas fa-check"></i></div>
+                        <div class="lesson-info"><h4>انقسام الخلية</h4><p>الانقسام الميتوزي والميوزي</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>65 دقيقة</span></div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-num">3</div>
+                        <div class="lesson-info"><h4>الحمض النووي DNA</h4><p>تركيبه ووظائفه والشفرة الوراثية</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>70 دقيقة</span></div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-num">4</div>
+                        <div class="lesson-info"><h4>الوراثة Mendel</h4><p>قوانين مندل وتطبيقاتها</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>60 دقيقة</span></div>                    </div>
+                    <div class="lesson">
+                        <div class="lesson-num">5</div>
+                        <div class="lesson-info"><h4>التنوع الحيوي</h4><p>تصنيف الكائنات الحية</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>55 دقيقة</span></div>
+                    </div>
+                    <div class="lesson">
+                        <div class="lesson-num">6</div>
+                        <div class="lesson-info"><h4>الجهاز العصبي</h4><p>تركيبه ووظائفه في الإنسان</p></div>
+                        <div class="lesson-time"><i class="fas fa-clock"></i><span>75 دقيقة</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="side-card glass reveal">
+                    <h3><i class="fas fa-chart-line"></i> تقدمك</h3>
+                    <div class="progress"><div class="progress-fill" style="width:10%;"></div></div>
+                    <div class="progress-text"><span>مكتمل</span><span>10%</span></div>
+                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-bottom:20px;">4 من 36 درس مكتمل</p>
+                    <button class="btn" style="width:100%;justify-content:center;">تابع التعلم</button>
+                </div>
+                <div class="side-card glass reveal" id="materials">
+                    <h3><i class="fas fa-download"></i> المواد التعليمية</h3>
+                    <div class="materials">
+                        <a href="#" class="material"><i class="fas fa-file-pdf"></i><div class="material-info"><h4>ملخص الوحدة 1</h4><p>PDF - 3MB</p></div><i class="fas fa-download" style="color:var(--green);"></i></a>
+                        <a href="#" class="material"><i class="fas fa-file-pdf"></i><div class="material-info"><h4>بنك أسئلة الأحياء</h4><p>PDF - 8MB</p></div><i class="fas fa-download" style="color:var(--green);"></i></a>
+                        <a href="#" class="material"><i class="fas fa-file-pdf"></i><div class="material-info"><h4>امتحانات سابقة</h4><p>PDF - 5MB</p></div><i class="fas fa-download" style="color:var(--green);"></i></a>
+                        <a href="#" class="material"><i class="fas fa-file-image"></i><div class="material-info"><h4>خرائط ذهنية</h4><p>PNG - 4MB</p></div><i class="fas fa-download" style="color:var(--green);"></i></a>
+                        <a href="#" class="material"><i class="fas fa-file-word"></i><div class="material-info"><h4>واجبات الدروس</h4><p>DOCX - 2MB</p></div><i class="fas fa-download" style="color:var(--green);"></i></a>
+                    </div>
+                </div>
+                <div class="side-card glass instructor reveal">
+                    <div class="inst-img"><img src="teacher.jpg" alt="المدرس"></div>
+                    <h4>الأستاذ إبراهيم شكري</h4>
+                    <p>مدرس الأحياء والعلوم</p>
+                    <div class="social"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo"><i class="fas fa-dna"></i> أ/ إبراهيم شكري</div>
+            <div class="footer-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="#lessons">الدروس</a>
+                <a href="#materials">المواد</a>
+                <a href="#">تواصل معنا</a>
+            </div>            <div class="footer-bottom"><p>© 2026 جميع الحقوق محفوظة للأستاذ إبراهيم شكري</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const lessons=document.querySelectorAll('.lesson');
+        lessons.forEach(l=>{l.addEventListener('click',function(){lessons.forEach(x=>x.classList.remove('active'));this.classList.add('active');});});
+        window.addEventListener('scroll',reveal);
+        function reveal(){const r=document.querySelectorAll('.reveal'),h=window.innerHeight;r.forEach(e=>{if(e.getBoundingClientRect().top<h-100)e.classList.add('active');});}
+        document.querySelector('.play-btn')?.addEventListener('click',()=>alert('سيتم تشغيل الفيديو قريباً!'));
+        window.addEventListener('load',reveal);
+    </script>
+</body>
+</html>
